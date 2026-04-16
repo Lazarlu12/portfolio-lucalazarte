@@ -1,0 +1,226 @@
+:root {
+  --bg-main: #121212;
+  --text-main: #E0E0E0;
+  --text-secondary: #B0B0B0;
+  --border-color: #444444;
+  --accent-color: #888888;
+  
+  --font-heading: 'Raleway', sans-serif;
+  --font-body: 'Merriweather', serif;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: var(--bg-main);
+  color: var(--text-main);
+  font-family: var(--font-body);
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-heading);
+  font-weight: 400;
+  letter-spacing: 0.05em;
+  color: var(--text-main);
+}
+
+a {
+  text-decoration: none;
+  color: var(--text-main);
+  transition: color 0.3s ease;
+}
+
+a:hover {
+  color: var(--accent-color);
+}
+
+section {
+  padding: 6rem 2rem;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.section-title {
+  font-size: 2rem;
+  margin-bottom: 3rem;
+  border-bottom: 1px solid var(--border-color);
+  padding-bottom: 0.5rem;
+  display: inline-block;
+}
+/* Timeline */
+.timeline-container {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  padding-left: 1.4rem;
+}
+
+.timeline-line,
+.timeline-progress {
+  position: absolute;
+  left: 0.3rem;
+  width: 2px;
+  border-radius: 999px;
+}
+
+.timeline-line {
+  top: 0;
+  bottom: 0;
+  background: rgba(136, 136, 136, 0.25);
+}
+
+.timeline-progress {
+  top: 0;
+  height: 0;
+  background: var(--accent-color);
+  transition: height 0.25s ease-out;
+}
+
+.timeline-item {
+  position: relative;
+  padding-left: 1.6rem;
+  border-left: 1px solid rgba(136, 136, 136, 0.25);
+  transition: background-color 0.3s ease, border-color 0.3s ease, transform 0.3s ease, opacity 0.3s ease;
+  opacity: 0.85;
+}
+
+.timeline-item:hover {
+  transform: translateX(0.2rem);
+}
+
+.timeline-item.active {
+  background-color: rgba(255, 255, 255, 0.04);
+  border-color: var(--accent-color);
+  opacity: 1;
+}
+
+.timeline-marker {
+  position: absolute;
+  left: -0.6rem;
+  top: 0;
+  width: 11px;
+  height: 11px;
+  border-radius: 50%;
+  background: var(--bg-main);
+  border: 2px solid var(--accent-color);
+  transform: translate(40%, -50%);
+  transition: transform 0.3s ease, background-color 0.3s ease, border-color 0.3s ease;
+}
+
+.timeline-item.active .timeline-marker {
+  transform: translate(40%, -50%) scale(1.2);
+  background: var(--accent-color);
+}
+
+.timeline-item h3 {
+  font-size: 1.1rem;
+  margin-bottom: 0.2rem;
+}
+
+.timeline-subtitle {
+  display: block;
+  font-size: 0.85rem;
+  color: var(--accent-color);
+  margin-bottom: 1rem;
+  font-family: var(--font-heading);
+}
+
+.timeline-item p {
+  color: var(--text-secondary);
+  font-size: 0.95rem;
+}
+/* Buttons */
+.btn {
+  display: inline-block;
+  padding: 0.8rem 1.5rem;
+  font-family: var(--font-heading);
+  font-size: 0.9rem;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  border: 1px solid var(--border-color);
+  background: transparent;
+  color: var(--text-main);
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.btn:hover {
+  border-color: var(--text-main);
+  background: rgba(255, 255, 255, 0.05);
+}
+
+.btn-primary {
+  border-color: var(--text-main);
+}
+
+/* Animations */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.animate-fade-in {
+  animation: fadeIn 1s ease-out forwards;
+}
+
+.hero-section {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 4rem 1rem;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.hero-content {
+  flex: 1 1 400px;
+  display: flex;
+  flex-direction: column;
+}
+
+.hero-image {
+  flex: 0 0 300px;
+  display: flex;
+  justify-content: center;
+}
+
+.hero-image img {
+  max-width: 300px;
+  width: 100%;
+  border-radius: 50%;
+  margin-top: 2rem;
+}
+
+@media (max-width: 768px) {
+  .hero-section {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .hero-content {
+    text-align: center;
+    align-items: center;
+  }
+
+  .hero-content p,
+  .hero-content h1,
+  .hero-content h2 {
+    width: 100%;
+  }
+
+  .hero-image {
+    width: 100%;
+  }
+
+  .hero-image img {
+    max-width: 240px;
+    margin-top: 1.5rem;
+  }
+}
