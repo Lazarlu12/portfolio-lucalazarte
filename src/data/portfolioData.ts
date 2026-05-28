@@ -7,7 +7,7 @@ export const data: PortfolioData = {
     role: "Frontend Developer",
     profileImage: images.profileImage,
     bio: "Diseñando, desarrollando proyectos y aplicaciones web, escalables y centradas en el usuario.",
-    about: "Soy un estudiante de programación apasionado por el desarrollo web. Me enfoco principalmente en el ecosistema de React + TypeScript para el frontend. Resolviendo problemas y creando soluciones eficientes. Además, tengo conocimientos en Node.js y C# para el backend, y estoy e constante aprendizaje para mejorar mis habilidades en el mundo del desarrollo web.",
+    about: "Soy un estudiante de programación apasionado por el desarrollo web. Me enfoco principalmente en el ecosistema de React + TypeScript para el frontend. Resolviendo problemas y creando soluciones eficientes. Además, tengo conocimientos en Node.js y C# para el backend, y estoy en constante aprendizaje para mejorar mis habilidades en el mundo del desarrollo web.",
     email: "lazarteluca036@gmail.com",
     github: "https://github.com/Lazarlu12",
     linkedin: "https://www.linkedin.com/in/lucalazarte/",
